@@ -6,7 +6,7 @@
 //  Copyright © 2020 Wagner Gil Junior. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct AppConstants {
     

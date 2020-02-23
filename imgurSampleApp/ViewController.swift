@@ -16,14 +16,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let width = (view.frame.size.width - 20)  / 3
-        let width = (UIScreen.main.bounds.width - 20) / 3
+        let width = (UIScreen.main.bounds.height - 10) / 3
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
         layout.minimumInteritemSpacing = 5
         layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
-
 
 }
 
@@ -37,6 +35,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reuseCell", for: indexPath) as! CollectionViewCellController
         
         cell.imgDescription.text = collectionData[indexPath.row]
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
         
         return cell
     }
